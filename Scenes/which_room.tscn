@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://clmio8b87f03u"]
+
+[ext_resource type="Script" uid="uid://cgbctj4w7yoe5" path="res://Scenes/which_room.gd" id="1_f43ps"]
+[ext_resource type="Texture2D" uid="uid://bcnf08th4c50e" path="res://icon.svg" id="2_a2nfu"]
+[ext_resource type="PackedScene" uid="uid://crn1xgowsnp8a" path="res://Scenes/decision_box.tscn" id="3_a2nfu"]
+
+[node name="WhichRoom" type="Node2D"]
+script = ExtResource("1_f43ps")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(256, 148)
+texture = ExtResource("2_a2nfu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.08, 0.07)
+
+[node name="Question" type="Node2D" parent="."]
+
+[node name="QuestionTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="DecisionBox" parent="." instance=ExtResource("3_a2nfu")]
+
+[connection signal="timeout" from="QuestionTimer" to="." method="_on_question_timer_timeout"]
+[connection signal="addEvent" from="DecisionBox" to="." method="_on_decision_box_add_event"]
