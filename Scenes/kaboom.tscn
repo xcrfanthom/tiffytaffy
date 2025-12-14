@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8skds7atg3cd"]
+
+[ext_resource type="Script" uid="uid://da3v0p04mh1rq" path="res://Scenes/kaboom.gd" id="1_swbai"]
+[ext_resource type="VideoStream" uid="uid://eyfkxgktn4q5" path="res://Graphics/KaBoom/crazy.ogv" id="2_2ilx1"]
+
+[node name="KABOOM" type="Node2D"]
+script = ExtResource("1_swbai")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+stream = ExtResource("2_2ilx1")
+speed_scale = 10.0

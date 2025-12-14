@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy07qjowkwo3p"]
+
+[ext_resource type="Script" uid="uid://cdu7f3xgq13ft" path="res://Scenes/settings.gd" id="1_4geyq"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_4geyq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="back" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -1580.0
+offset_top = 674.0
+offset_right = -981.0
+offset_bottom = 1031.0
+theme_override_font_sizes/font_size = 256
+text = "Back"
+
+[connection signal="pressed" from="Control/back" to="." method="_on_back_pressed"]

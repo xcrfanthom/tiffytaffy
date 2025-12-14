@@ -6,11 +6,13 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed or event.button_index == MOUSE_BUTTON_LEFT:
-			TransitionLayer.change_scene("res://Scenes/which_room.tscn")
-
-
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			var file = FileAccess.open("user://save_state.save", FileAccess.WRITE)
+			if file:
+				file.store_string("when_thing_go_boom")
+				file.close()
+			get_tree().quit()
+			
 func _on_timer_timeout() -> void:
 	if (!Variables.exploded):
 		Variables.exploded = true

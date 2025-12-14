@@ -11,6 +11,13 @@ var combust : bool = false
 const timeOfColorChange = 0.5
 
 func _ready() -> void:
+	if FileAccess.file_exists("user://save_state.save"):
+		var file = FileAccess.open("user://save_state.save", FileAccess.READ)
+		if file:
+			var marker = file.get_as_text()
+			file.close()
+			if marker == "when_things_go_boom":
+				TransitionLayer.change_scene("res://Scenes/kaboom.tscn")
 	choose_event(preload("res://Scripts/All_Events/Event1.gd").new())
 	choose_question()
 	
