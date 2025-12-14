@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Ignore"
-	variableSocial = -10
+	variableSocial = -17
 	variableHeatlh = 0
-	variableSanity = 10
+	variableSanity = 17

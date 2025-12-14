@@ -4,7 +4,7 @@ var decision_box_scene : PackedScene = preload("res://Scenes/decision_box.tscn")
 var textOfQuestion_scene : PackedScene = preload("res://Scenes/text_of_question.tscn")
 
 var currentEvent : Event = null
-const all_animation := ["moveWitch1","moveWitch2","moveWitch3","moveWitch4","moveWitch5"]
+const all_animation := ["moveWitch1","moveWitch2","moveWitch3","moveWitch4","moveWitch5","moveWitch6","moveWitch7"]
 
 var combust : bool = false
 
@@ -19,6 +19,7 @@ func _ready() -> void:
 			if marker == "when_things_go_boom":
 				TransitionLayer.change_scene("res://Scenes/kaboom.tscn")
 	choose_event(preload("res://Scripts/All_Events/Event1.gd").new())
+	Variables.reset()
 	choose_question()
 	
 	Variables.connect("sociabilityChange", changeOnSocia)
@@ -71,6 +72,7 @@ func _process(_delta: float) -> void:
 	checkSanity()
 	checkHeatlh()
 	animationPlay()
+	the_sound()
 	if (Variables.end_game_bool):
 		randomlyCombust()
 	if ($Question.get_child_count()==1):
@@ -111,6 +113,12 @@ func _process(_delta: float) -> void:
 		question_text.connect("deleteText",deleteText)
 		
 		question.queue_free()
+	
+
+func the_sound():
+	var delay = randf_range(1000, 3000)
+	await get_tree().create_timer(delay).timeout
+	$AudioStreamPlayer3.play()
 
 func _on_question_timer_timeout() -> void:
 	$QuestionTimer.wait_time = randf_range(3, 5)
@@ -119,7 +127,7 @@ func _on_question_timer_timeout() -> void:
 func randomlyCombust():
 	$Sprite2D/AnimatedSprite2D.visible = true
 	combust = true
-	$Sprite2D/Witch.queue_free()
+	$Sprite2D/Witch.visible = false
 	$AnimationPlayer.stop()
 	Music.stop()
 	$AudioStreamPlayerWalk.stop()
@@ -162,7 +170,7 @@ func checkSanity():
 	elif(23>Variables.sanity and Variables.sanity>0):
 		$Sprite2D/SanityVar.play("AlmostEmtpy")
 	elif(Variables.sanity==0):
-		$Sprite2D/SanityVar.play("Empty")
+		$Sprite2D/SanityVar.play("Emptpy")
 
 func checkHeatlh():
 	if (Variables.health==100):

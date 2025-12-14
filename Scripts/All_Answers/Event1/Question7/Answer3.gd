@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Join"
-	variableSocial = 15
+	variableSocial = 22
 	variableHeatlh = 0
-	variableSanity = -15
+	variableSanity = -22

@@ -2,6 +2,7 @@ extends Answer
 
 func _init() -> void:
 	text = "Purple"
-	variableSocial = -20
-	variableHeatlh = 0
-	variableSanity = 10
+	var random_value = randf_range(-22,22)
+	variableSocial = int(random_value)
+	variableHeatlh = int(random_value)
+	variableSanity = int(random_value)

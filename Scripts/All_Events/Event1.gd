@@ -24,5 +24,11 @@ func addQuestions() -> void:
 	questions.append(preload("res://Scripts/All_Questions/Event1/Question17.gd").new())
 	questions.append(preload("res://Scripts/All_Questions/Event1/Question18.gd").new())
 	questions.append(preload("res://Scripts/All_Questions/Event1/Question19.gd").new())
+	questions.append(preload("res://Scripts/All_Questions/Event1/Question20.gd").new())
+	questions.append(preload("res://Scripts/All_Questions/Event1/Question21.gd").new())
+	questions.append(preload("res://Scripts/All_Questions/Event1/Question22.gd").new())
+	questions.append(preload("res://Scripts/All_Questions/Event1/Question23.gd").new())
+	questions.append(preload("res://Scripts/All_Questions/Event1/Question24.gd").new())
+	questions.append(preload("res://Scripts/All_Questions/Event1/Question25.gd").new())
 	finalQuestion = preload("res://Scripts/All_Questions/Event1/QuestionLast.gd").new()
 	first = false

@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Silence his alarm so that he misses work"
-	variableSocial = -10
+	variableSocial = -17
 	variableHeatlh = 0
-	variableSanity = -17
+	variableSanity = -24

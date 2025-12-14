@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Actually his neighbours wanna move the sofa now"
-	variableSocial = -5
+	variableSocial = -12
 	variableHeatlh = 0
-	variableSanity = -20
+	variableSanity = -27

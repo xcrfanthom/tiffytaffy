@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0yghnk5fwlby"]
+[gd_scene load_steps=3 format=3 uid="uid://cflo800sn8s57"]
 
-[ext_resource type="VideoStream" uid="uid://d2t52yg3lk4o4" path="res://Graphics/amazing_vod.ogv" id="1_duh1u"]
+[ext_resource type="VideoStream" uid="uid://bdpn227oaypqq" path="res://Graphics/urwrongustpidshi.ogv" id="1_duh1u"]
 [ext_resource type="Script" uid="uid://bqt4v7r4gmepw" path="res://Scenes/control.gd" id="2_duh1u"]
 
 [node name="Intro" type="Node2D"]
@@ -34,19 +34,21 @@ theme_override_font_sizes/normal_font_size = 64
 
 [node name="Yes" type="Button" parent="Control/Panel"]
 layout_mode = 0
-offset_left = 409.0
-offset_top = 1408.0
-offset_right = 576.0
-offset_bottom = 1481.0
+offset_left = 1696.0
+offset_top = 500.0
+offset_right = 1863.0
+offset_bottom = 573.0
 theme_override_font_sizes/font_size = 32
 text = "Yes"
 
 [node name="No" type="Button" parent="Control/Panel"]
 layout_mode = 0
-offset_left = 1320.0
-offset_top = 1351.0
-offset_right = 2498.0
-offset_bottom = 1548.0
+offset_left = 1184.0
+offset_top = 670.0
+offset_right = 2362.0
+offset_bottom = 867.0
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 128
 text = "No"
+
+[connection signal="finished" from="VideoStreamPlayer" to="Control" method="_on_video_stream_player_finished"]

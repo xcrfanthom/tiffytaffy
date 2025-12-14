@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Savotage the rest of participants. Make him win"
-	variableSocial = 15
+	variableSocial = 22
 	variableHeatlh = 0
-	variableSanity = 25
+	variableSanity = 32

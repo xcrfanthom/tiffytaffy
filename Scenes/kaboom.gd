@@ -1,6 +1,9 @@
 extends Node2D
 
+
+
 func _ready() -> void:
+	Variables.stop_ex = true
 	$VideoStreamPlayer.play()
 
 func _self_destruct():

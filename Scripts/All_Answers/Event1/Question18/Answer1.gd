@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Random neighbour chat, he needs it"
-	variableSocial = 15
+	variableSocial = 22
 	variableHeatlh = 0
-	variableSanity = 10
+	variableSanity = 17

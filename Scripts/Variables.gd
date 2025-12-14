@@ -7,6 +7,7 @@ signal sanityChange(how : bool)
 var touched_grass = false
 var poor_herbet = false
 var exploded = false
+var stop_ex = false
 
 var sociability = 50:
 	set(value):
@@ -48,7 +49,7 @@ func _process(_delta: float) -> void:
 		TransitionLayer.change_scene("res://Scenes/dead_of_chad.tscn")
 	elif (sociability==100 or health==100 or sanity==100):
 		inside_an_end = true
-		TransitionLayer.change_scene("placeholder")
+		TransitionLayer.change_scene("res://Scenes/happy_chad.tscn")
 
 func changeEvent(event:Event):
 	if (event.finalQuestion!=null):
@@ -59,3 +60,11 @@ func lastEvent() -> Event:
 
 func end_game():
 	end_game_bool = true
+
+func reset():
+	sociability = 50
+	health = 50
+	sanity = 50
+	current_past_events.clear()
+	end_game_bool = false
+	inside_an_end = false

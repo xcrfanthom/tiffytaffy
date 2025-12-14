@@ -9,7 +9,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			var file = FileAccess.open("user://save_state.save", FileAccess.WRITE)
 			if file:
-				file.store_string("when_thing_go_boom")
+				file.store_string("when_things_go_boom")
 				file.close()
 			get_tree().quit()
 			

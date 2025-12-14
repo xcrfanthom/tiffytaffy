@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Yellow"
-	variableSocial = 10
-	variableHeatlh = 10
-	variableSanity = 10
+	variableSocial = int(randf_range(-22,22))
+	variableHeatlh = int(randf_range(-22,22))
+	variableSanity = int(randf_range(-22,22))

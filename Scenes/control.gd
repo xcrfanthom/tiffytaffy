@@ -47,3 +47,7 @@ Do you want to continue to the next room?
 [color=red]Yes[/color] → leave scene  
 [color=green]No[/color] → stay here
 """
+
+
+func _on_video_stream_player_finished() -> void:
+	TransitionLayer.change_scene("res://Scenes/which_room.tscn")

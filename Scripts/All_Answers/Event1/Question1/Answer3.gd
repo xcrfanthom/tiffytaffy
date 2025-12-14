@@ -2,6 +2,6 @@ extends Answer
 
 func _init() -> void:
 	text = "Random ligament rupture"
-	variableSocial = -5
-	variableHeatlh = -35
+	variableSocial = -12
+	variableHeatlh = -42
 	variableSanity = 0

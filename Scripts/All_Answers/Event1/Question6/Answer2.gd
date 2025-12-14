@@ -1,7 +1,7 @@
 extends Answer
 
 func _init() -> void:
-	text = "Go to the cinema with friends, doesn’t matter the movie"
-	variableSocial = 20
+	text = "Who cares which one, but with friends"
+	variableSocial = 27
 	variableHeatlh = 0
 	variableSanity = 0

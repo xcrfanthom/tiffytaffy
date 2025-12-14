@@ -1,7 +1,7 @@
 extends Answer
 
 func _init() -> void:
-	text = "Drive by his window & spray him with deodorant!"
+	text = "Drive by his window and spray him with deodorant"
 	variableSocial = 0
-	variableHeatlh = 12
-	variableSanity = -8
+	variableHeatlh = 19
+	variableSanity = -16
