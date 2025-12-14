@@ -17,9 +17,16 @@ var eventAns : Array
 var first = true
 var animation_time = 1.0
 
+var end_game : bool = false
+
+var lastQuestionOfEvent : bool = false
+
 signal addEvent(event)
+signal deleteText(speed)
 
 @onready var sprite = $Sprite2D
+@onready var audio = $AudioStreamPlayer
+
 
 func _ready() -> void:
 	$Sprite2D/TextureButton/Label.text = textAns1
@@ -28,12 +35,10 @@ func _ready() -> void:
 	sprite.position.y = upPosition
 	sprite.self_modulate.a = 0
 	sprite.modulate.a = 0
+	$Sprite2D/TextureButton/Label.self_modulate.a = 0
+	$Sprite2D/TextureButton2/Label.self_modulate.a = 0
+	$Sprite2D/TextureButton3/Label.self_modulate.a = 0
 	do_animation()
-	print("got out of do animation")
-
-func _process(delta: float) -> void:
-	print(sprite.position)
-	print(sprite.self_modulate)
 
 func _on_texture_button_button_down() -> void:
 	var button = $Sprite2D/TextureButton/Label
@@ -49,9 +54,15 @@ func _on_texture_button_button_up() -> void:
 	Variables.sanity += effectAns1[2]
 	Variables.health += effectAns1[1]
 	Variables.sociability += effectAns1[0]
+	play_audio()
 	if (1 in eventAns[0]):
 		addEvent.emit(eventAns[1])
+	else:
+		if (lastQuestionOfEvent):
+			addEvent.emit(Variables.lastEvent())
 	do_animation()
+	if (end_game):
+		Variables.end_game()
 
 func _on_texture_button_2_button_up() -> void:
 	$Sprite2D/TextureButton2/Label.position.y = 1.138
@@ -59,9 +70,15 @@ func _on_texture_button_2_button_up() -> void:
 	Variables.sanity += effectAns2[2]
 	Variables.health += effectAns2[1]
 	Variables.sociability += effectAns2[0]
+	play_audio()
 	if (2 in eventAns[0]):
 		addEvent.emit(eventAns[1])
+	else:
+		if (lastQuestionOfEvent):
+			addEvent.emit(Variables.lastEvent())
 	do_animation()
+	if (end_game):
+		Variables.end_game()
 
 func _on_texture_button_3_button_down() -> void:
 	var button = $Sprite2D/TextureButton3/Label
@@ -73,28 +90,43 @@ func _on_texture_button_3_button_up() -> void:
 	Variables.sanity += effectAns3[2]
 	Variables.health += effectAns3[1]
 	Variables.sociability += effectAns3[0]
+	play_audio()
 	if (3 in eventAns[0]):
 		addEvent.emit(eventAns[1])
+	else:
+		if (lastQuestionOfEvent):
+			addEvent.emit(Variables.lastEvent())
 	do_animation()
+	if (end_game):
+		Variables.end_game()
 
 func do_animation() -> void:
 	if (first):
-		print("In animation first")
 		var tween = create_tween()
 		tween.set_parallel(true)
 		tween.tween_property($Sprite2D, "position", Vector2(sprite.position.x, downPosition), animation_time)
 		tween.tween_property($Sprite2D, "self_modulate:a", 1, animation_time*0.75)
-		tween.tween_property($Sprite2D, "modulate:a", 1, animation_time*0.75)
-		
+		tween.tween_property($Sprite2D, "modulate:a", 1, animation_time*0.9)
+		tween.tween_property($Sprite2D/TextureButton/Label, "self_modulate:a", 1, animation_time*0.75)
+		tween.tween_property($Sprite2D/TextureButton2/Label, "self_modulate:a", 1, animation_time*0.75)
+		tween.tween_property($Sprite2D/TextureButton3/Label, "self_modulate:a", 1, animation_time*0.75)
 		await tween.finished
 		animation_time = 0.75
 		first = false
 	else:
-		print("In animation no first")
 		var tween = create_tween()
 		tween.set_parallel(true)
 		tween.tween_property($Sprite2D, "position", Vector2(sprite.position.x, upPosition), animation_time)
 		tween.tween_property($Sprite2D, "self_modulate:a", 0, animation_time*0.75)
-		tween.tween_property($Sprite2D, "modulate:a", 0, animation_time*0.75)
+		tween.tween_property($Sprite2D, "modulate:a", 0, animation_time*0.9)
+		deleteText.emit(animation_time)
+		tween.tween_property($Sprite2D/TextureButton/Label, "self_modulate:a", 0, animation_time*0.75)
+		tween.tween_property($Sprite2D/TextureButton2/Label, "self_modulate:a", 0, animation_time*0.75)
+		tween.tween_property($Sprite2D/TextureButton3/Label, "self_modulate:a", 0, animation_time*0.75)
 		await tween.finished
 		queue_free()
+
+func play_audio():
+	audio.volume_db = randf_range(-15,15)
+	audio.pitch_scale = randf_range(0.6, 1.4)
+	audio.play()

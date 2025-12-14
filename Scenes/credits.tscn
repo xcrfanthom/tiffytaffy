@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuac2nivnpdlt"]
+
+[ext_resource type="Script" uid="uid://b1t2qk5ag37q2" path="res://Scenes/credits.gd" id="1_ccovl"]
+[ext_resource type="FontFile" uid="uid://dkub7chyn3wds" path="res://Fonts/qd-better-comic-sans-font/Qdbettercomicsans-jEEeG.ttf" id="1_gryuy"]
+[ext_resource type="AudioStream" uid="uid://cdvnj4e510spl" path="res://Music/Tobu - Candyland [EARRAPE Edition] - Ted.mp3" id="2_ccovl"]
+[ext_resource type="AudioStream" uid="uid://dbmf51f7bxceq" path="res://Music/editedCredits.wav" id="4_1bamb"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ccovl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+scale = Vector2(10, 10)
+color = Color(0.08270485, 0.07049156, 0.10011921, 1)
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1279.9999
+offset_bottom = 719.99994
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("1_gryuy")
+theme_override_font_sizes/font_size = 40
+text = "TiffyTaffy (Daniel Paez Franco - Bartu Akarsu)
+Thank you for playing the game. Sorry for making you spontaniously 
+combust (not sorry).
+
+
+Coding: Daniel Paez Franco
+Sprites: Bartu Akarsu
+Soundtrack: Bartu Akarsu
+VSC: Daniel Paez Franco and Bartu Akarsu
+Idea: Daniel Paez Franco
+
+Game Jam: Inter-Actif GameJam 2025 (Theme: Reach out)
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ccovl")
+pitch_scale = 1.25
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1bamb")
+volume_db = 10.0
+autoplay = true
+bus = &"OtherSounds"

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddphq8uux4vx3"]
+
+[ext_resource type="VideoStream" uid="uid://bvdrwoadhhtcn" path="res://Graphics/Dead_Chad/fall-1(updated).ogv" id="1_ntrwq"]
+[ext_resource type="Script" uid="uid://8eiyi1wt3pnf" path="res://dead_of_chad.gd" id="2_ttq1w"]
+[ext_resource type="AudioStream" uid="uid://c4nx1612n7k6b" path="res://Music/background-music.wav" id="3_ttq1w"]
+[ext_resource type="VideoStream" uid="uid://bqvw6liahtm5m" path="res://Graphics/Dead_Chad/fall-2(updated).ogv" id="4_f3cdd"]
+[ext_resource type="AudioStream" uid="uid://d23dvraioikjt" path="res://Music/Vfx/ground-impact-352053.mp3" id="5_hfcku"]
+
+[node name="DeadOfChad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.4, 5.4)
+script = ExtResource("2_ttq1w")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_ntrwq")
+autoplay = true
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
+z_index = -2
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+stream = ExtResource("4_f3cdd")
+loop = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ttq1w")
+volume_db = -25.0
+pitch_scale = 0.5
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hfcku")
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
