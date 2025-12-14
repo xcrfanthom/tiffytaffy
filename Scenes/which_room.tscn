@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://clmio8b87f03u"]
+[gd_scene load_steps=92 format=3 uid="uid://clmio8b87f03u"]
 
 [ext_resource type="Script" uid="uid://cgbctj4w7yoe5" path="res://Scenes/which_room.gd" id="1_f43ps"]
 [ext_resource type="Texture2D" uid="uid://bao0akcqx0y6i" path="res://Graphics/main_scene.png" id="2_dx2ui"]
@@ -79,6 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://c3813jp1ty6fc" path="res://Graphics/ExpontaneousCombustion/ezgif-split (2)/ezgif-split/frame_53_delay-0.03s.png" id="75_2u2sb"]
 [ext_resource type="Texture2D" uid="uid://c76hupoaokajo" path="res://Graphics/ExpontaneousCombustion/ezgif-split (2)/ezgif-split/frame_54_delay-0.03s.png" id="76_7vdk8"]
 [ext_resource type="AudioStream" uid="uid://bpdqxofy4pjoc" path="res://Music/Vfx/CoolAssExplotion.wav" id="79_lalqo"]
+[ext_resource type="AudioStream" uid="uid://cmiyewk8cscdo" path="res://Music/Vfx/12-13-2025 15.08.wav" id="80_se78g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xj1nb"]
 animations = [{
@@ -895,7 +896,7 @@ animation = &"KindaEmpty"
 [node name="SanityVar" type="AnimatedSprite2D" parent="Sprite2D"]
 position = Vector2(-164.06, 114.701)
 sprite_frames = SubResource("SpriteFrames_2jap4")
-animation = &"Emtpy"
+animation = &"Full"
 
 [node name="HeatlhVar" type="AnimatedSprite2D" parent="Sprite2D"]
 position = Vector2(-218.41791, 114.70149)
@@ -903,6 +904,7 @@ sprite_frames = SubResource("SpriteFrames_0fwv2")
 animation = &"Full"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+visible = false
 z_index = 4096
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_l3euv")
@@ -938,5 +940,8 @@ bus = &"OtherSounds"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("79_lalqo")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("80_se78g")
 
 [connection signal="timeout" from="QuestionTimer" to="." method="_on_question_timer_timeout"]

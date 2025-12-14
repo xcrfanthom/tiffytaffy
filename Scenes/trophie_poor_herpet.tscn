@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://inqem0eu0op2"]
+
+[ext_resource type="VideoStream" uid="uid://b1g21o2ly6mdh" path="res://Graphics/Dead_Chad/poor-herbet.ogv" id="1_vs5pu"]
+[ext_resource type="FontFile" uid="uid://dkub7chyn3wds" path="res://Fonts/qd-better-comic-sans-font/Qdbettercomicsans-jEEeG.ttf" id="2_ab0g1"]
+
+[node name="TrophiePoorHerpet" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = 100
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -452.0
+offset_top = -191.0
+offset_right = -356.0
+offset_bottom = -159.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(4, 4)
+stream = ExtResource("1_vs5pu")
+
+[node name="Label" type="Label" parent="VideoStreamPlayer"]
+z_index = 101
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -6.750002
+offset_right = 49.5
+offset_bottom = 16.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_ab0g1")
+text = "Poor Herbet"

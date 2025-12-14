@@ -8,9 +8,39 @@ const all_animation := ["moveWitch1","moveWitch2","moveWitch3","moveWitch4","mov
 
 var combust : bool = false
 
+const timeOfColorChange = 0.5
+
 func _ready() -> void:
 	choose_event(preload("res://Scripts/All_Events/Event1.gd").new())
 	choose_question()
+	
+	Variables.connect("sociabilityChange", changeOnSocia)
+	Variables.connect("healthChange", changeOnHealth)
+	Variables.connect("sanityChange", changeOnSanity)
+
+func changeOnSocia(how : bool):
+	var tween = create_tween()
+	if (how==true):
+		tween.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(0.298, 0.745, 0.2),timeOfColorChange)
+	else:
+		tween.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(0.875, 0.122, 0.031),timeOfColorChange)
+	tween.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
+
+func changeOnHealth(how : bool):
+	var tween = create_tween()
+	if (how==true):
+		tween.tween_property($Sprite2D/HeatlhVar, "self_modulate", Color(0.298, 0.745, 0.2),timeOfColorChange)
+	else:
+		tween.tween_property($Sprite2D/HeatlhVar, "self_modulate", Color(0.875, 0.122, 0.031),timeOfColorChange)
+	tween.tween_property($Sprite2D/HeatlhVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
+
+func changeOnSanity(how : bool):
+	var tween = create_tween()
+	if (how==true):
+		tween.tween_property($Sprite2D/SanityVar, "self_modulate", Color(0.188, 0.933, 0.204),timeOfColorChange)
+	else:
+		tween.tween_property($Sprite2D/SanityVar, "self_modulate", Color(1.0, 0.0, 0.0),timeOfColorChange)
+	tween.tween_property($Sprite2D/SanityVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
 
 func choose_event(event) -> void:
 	if (currentEvent!=null):
@@ -80,12 +110,14 @@ func _on_question_timer_timeout() -> void:
 	choose_question()
 
 func randomlyCombust():
+	$Sprite2D/AnimatedSprite2D.visible = true
 	combust = true
 	$Sprite2D/Witch.queue_free()
 	$AnimationPlayer.stop()
 	Music.stop()
 	$AudioStreamPlayerWalk.stop()
 	$AudioStreamPlayerTp.stop()
+	$AudioStreamPlayer2.play()
 	$AudioStreamPlayer.play()
 	$Sprite2D/AnimatedSprite2D.play("explosion")
 	await $Sprite2D/AnimatedSprite2D.animation_finished

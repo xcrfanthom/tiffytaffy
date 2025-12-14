@@ -1,10 +1,9 @@
 extends Event
 
 func _ready() -> void:
-	nameEvent = "Test"
+	nameEvent = "Loop0"
 	addQuestions()
 
 func addQuestions() -> void:
-	questions.append(preload("res://Scripts/All_Questions/Event1/Question1.gd").new())
-	finalQuestion = preload("res://Scripts/All_Questions/Event1/Question4.gd").new()
+	finalQuestion = preload("res://Scripts/All_Questions/Event2/QuestionLast.gd").new()
 	first = false

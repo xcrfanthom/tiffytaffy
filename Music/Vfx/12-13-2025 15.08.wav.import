@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmiyewk8cscdo"
+path="res://.godot/imported/12-13-2025 15.08.wav-b58efaf3504806789b8f00a0eabef0dc.sample"
+
+[deps]
+
+source_file="res://Music/Vfx/12-13-2025 15.08.wav"
+dest_files=["res://.godot/imported/12-13-2025 15.08.wav-b58efaf3504806789b8f00a0eabef0dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

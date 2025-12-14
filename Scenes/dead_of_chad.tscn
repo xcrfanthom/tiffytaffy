@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddphq8uux4vx3"]
+[gd_scene load_steps=9 format=3 uid="uid://ddphq8uux4vx3"]
 
 [ext_resource type="VideoStream" uid="uid://bvdrwoadhhtcn" path="res://Graphics/Dead_Chad/fall-1(updated).ogv" id="1_ntrwq"]
 [ext_resource type="Script" uid="uid://8eiyi1wt3pnf" path="res://dead_of_chad.gd" id="2_ttq1w"]
 [ext_resource type="AudioStream" uid="uid://c4nx1612n7k6b" path="res://Music/background-music.wav" id="3_ttq1w"]
 [ext_resource type="VideoStream" uid="uid://bqvw6liahtm5m" path="res://Graphics/Dead_Chad/fall-2(updated).ogv" id="4_f3cdd"]
+[ext_resource type="VideoStream" uid="uid://b1g21o2ly6mdh" path="res://Graphics/Dead_Chad/poor-herbet.ogv" id="4_jqf3k"]
 [ext_resource type="AudioStream" uid="uid://d23dvraioikjt" path="res://Music/Vfx/ground-impact-352053.mp3" id="5_hfcku"]
+[ext_resource type="FontFile" uid="uid://dkub7chyn3wds" path="res://Fonts/qd-better-comic-sans-font/Qdbettercomicsans-jEEeG.ttf" id="5_tvn78"]
+[ext_resource type="AudioStream" uid="uid://ccrcuqq4cdth0" path="res://Music/Vfx/collect-points-190037.mp3" id="8_tvn78"]
 
 [node name="DeadOfChad" type="Control"]
 layout_mode = 3
@@ -31,6 +34,34 @@ offset_bottom = 270.0
 stream = ExtResource("4_f3cdd")
 loop = true
 
+[node name="VideoStreamPlayer3" type="VideoStreamPlayer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+stream = ExtResource("4_jqf3k")
+speed_scale = 5.2
+autoplay = true
+
+[node name="Label" type="Label" parent="VideoStreamPlayer3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.49074
+offset_bottom = 9.490738
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("5_tvn78")
+text = "Poor Herbet"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ttq1w")
 volume_db = -25.0
@@ -40,4 +71,13 @@ autoplay = true
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hfcku")
 
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_tvn78")
+pitch_scale = 0.9
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

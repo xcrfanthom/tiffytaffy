@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuac2nivnpdlt"]
+[gd_scene load_steps=7 format=3 uid="uid://cuac2nivnpdlt"]
 
 [ext_resource type="Script" uid="uid://b1t2qk5ag37q2" path="res://Scenes/credits.gd" id="1_ccovl"]
 [ext_resource type="FontFile" uid="uid://dkub7chyn3wds" path="res://Fonts/qd-better-comic-sans-font/Qdbettercomicsans-jEEeG.ttf" id="1_gryuy"]
 [ext_resource type="AudioStream" uid="uid://cdvnj4e510spl" path="res://Music/Tobu - Candyland [EARRAPE Edition] - Ted.mp3" id="2_ccovl"]
 [ext_resource type="AudioStream" uid="uid://dbmf51f7bxceq" path="res://Music/editedCredits.wav" id="4_1bamb"]
+[ext_resource type="AudioStream" uid="uid://ccrcuqq4cdth0" path="res://Music/Vfx/collect-points-190037.mp3" id="5_uah1q"]
+[ext_resource type="VideoStream" uid="uid://dktx2tw4tgoo" path="res://Graphics/ExpontaneousCombustion/ASPLODE(2).ogv" id="5_xelri"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -26,6 +28,7 @@ layout_mode = 0
 offset_right = 1279.9999
 offset_bottom = 719.99994
 scale = Vector2(0.2, 0.2)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_gryuy")
 theme_override_font_sizes/font_size = 40
 text = "TiffyTaffy (Daniel Paez Franco - Bartu Akarsu)
@@ -38,6 +41,7 @@ Sprites: Bartu Akarsu
 Soundtrack: Bartu Akarsu
 VSC: Daniel Paez Franco and Bartu Akarsu
 Idea: Daniel Paez Franco
+Voice actor: Daniel Paez Franco
 
 Game Jam: Inter-Actif GameJam 2025 (Theme: Reach out)
 "
@@ -52,3 +56,40 @@ stream = ExtResource("4_1bamb")
 volume_db = 10.0
 autoplay = true
 bus = &"OtherSounds"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uah1q")
+pitch_scale = 0.9
+
+[node name="VideoStreamPlayer3" type="VideoStreamPlayer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+stream = ExtResource("5_xelri")
+autoplay = true
+
+[node name="Label" type="Label" parent="VideoStreamPlayer3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.49074
+offset_bottom = 9.490738
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("1_gryuy")
+text = "Poor Herbet"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
