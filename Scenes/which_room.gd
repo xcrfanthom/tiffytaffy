@@ -48,7 +48,20 @@ func tutorial_explanation():
 	explanation_tuto1.textOfLabel = "In this game there are 3 variables"
 	explanation_tuto1.position = Vector2(-3800.0, -8750.0)
 	add_child(explanation_tuto1)
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(2.0).timeout
+	var tween1 = create_tween()
+	tween1.set_parallel(true)
+	tween1.tween_property($Sprite2D/HeatlhVar, "self_modulate", Color(0.988, 0.937, 0.0),timeOfColorChange)
+	tween1.tween_property($Sprite2D/SanityVar, "self_modulate", Color(1.0, 0.933, 0.09),timeOfColorChange)
+	tween1.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(0.878, 0.886, 0.243),timeOfColorChange)
+	await tween1.finished
+	await get_tree().create_timer(2.0).timeout
+	var tween2 = create_tween()
+	tween2.set_parallel(true)
+	tween2.tween_property($Sprite2D/HeatlhVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
+	tween2.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
+	tween2.tween_property($Sprite2D/SanityVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
+	await tween2.finished
 	deleteText(0.75)
 	await get_tree().create_timer(2.0).timeout
 	var explanation_tuto2 = textOfQuestion_scene.instantiate() as TextOfQuestion
