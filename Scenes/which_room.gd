@@ -8,9 +8,11 @@ const all_animation := ["moveWitch1","moveWitch2","moveWitch3","moveWitch4","mov
 
 var combust : bool = false
 
+
 const timeOfColorChange = 0.5
 
 func _ready() -> void:
+	Variables.in_game = true
 	if FileAccess.file_exists("user://save_state.save"):
 		var file = FileAccess.open("user://save_state.save", FileAccess.READ)
 		if file:

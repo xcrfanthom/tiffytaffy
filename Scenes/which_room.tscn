@@ -860,6 +860,70 @@ tracks/5/keys = {
 "values": [1.0, 1.5, 1.0, 2.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_f0lwd"]
+resource_name = "moveWitch6"
+length = 10.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Witch:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 6.6, 6.7, 6.9, 7.2, 7.8, 10, 10.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(13.701493, -14.208956), Vector2(24.358208, -28.925373), Vector2(40.089554, -39.582085), Vector2(55.8209, -42.1194), Vector2(77.13433, -42.119404), Vector2(77.13433, -42.119404), Vector2(90.83582, -37.044777), Vector2(110.1194, -27.910448), Vector2(134.98508, -8.119406), Vector2(134.98508, -8.119406), Vector2(134.98508, -8.119406), Vector2(134.98508, -8.119406), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Witch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 3.01, 3.03, 3.05, 3.08, 3.11, 3.17, 3.2, 3.23, 3.26, 4, 5, 6, 6.5, 6.6, 6.7, 6.9, 7.2, 7.8, 10, 10.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.34906584, -0.34906584, -0.34906584, -0.29670596, -0.17453292, 0.0, 0.0, 0.017453292, 0.034906585, 0.05235988, 0.06981317, 0.08726646259971647, 0.10471976, 0.12217305, 0.13962634, 0.15707964, 1.3962634, 3.9269907, 5.061455, 0.0, 0.034906585, 0.37873644, 0.37873644, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/Witch:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 6.6, 6.7, 6.9, 7.2, 7.8, 10, 10.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/Witch:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 6.6, 6.7, 6.9, 7.2, 7.8, 7.81, 10, 10.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayerTp:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_se78g"]
 resource_name = "moveWitch7"
 length = 13.0
@@ -946,70 +1010,6 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_f0lwd"]
-resource_name = "moveWitch6"
-length = 10.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/Witch:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 6.6, 6.7, 6.9, 7.2, 7.8, 10, 10.01),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(13.701493, -14.208956), Vector2(24.358208, -28.925373), Vector2(40.089554, -39.582085), Vector2(55.8209, -42.1194), Vector2(77.13433, -42.119404), Vector2(77.13433, -42.119404), Vector2(90.83582, -37.044777), Vector2(110.1194, -27.910448), Vector2(134.98508, -8.119406), Vector2(134.98508, -8.119406), Vector2(134.98508, -8.119406), Vector2(134.98508, -8.119406), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/Witch:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 3.01, 3.03, 3.05, 3.08, 3.11, 3.17, 3.2, 3.23, 3.26, 4, 5, 6, 6.5, 6.6, 6.7, 6.9, 7.2, 7.8, 10, 10.01),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -0.34906584, -0.34906584, -0.34906584, -0.29670596, -0.17453292, 0.0, 0.0, 0.017453292, 0.034906585, 0.05235988, 0.06981317, 0.08726646259971647, 0.10471976, 0.12217305, 0.13962634, 0.15707964, 1.3962634, 3.9269907, 5.061455, 0.0, 0.034906585, 0.37873644, 0.37873644, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D/Witch:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 6.6, 6.7, 6.9, 7.2, 7.8, 10, 10.01),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D/Witch:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3, 6.6, 6.7, 6.9, 7.2, 7.8, 7.81, 10, 10.01),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayerTp:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(10),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y712a"]

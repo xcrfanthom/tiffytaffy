@@ -1,0 +1,194 @@
+[gd_scene load_steps=8 format=3 uid="uid://sdu588bjs2y8"]
+
+[ext_resource type="Texture2D" uid="uid://bbfqpukqqrr18" path="res://Graphics/AchievmentsMenu.png" id="1_h3mnm"]
+[ext_resource type="Script" uid="uid://dqmvfvsc4mhym" path="res://Scenes/achievment_menu.gd" id="1_ho0nn"]
+[ext_resource type="VideoStream" uid="uid://dvct4bey1xmrf" path="res://Graphics/Happy_Chad/touch-grass.ogv" id="1_xtt22"]
+[ext_resource type="FontFile" uid="uid://dkub7chyn3wds" path="res://Fonts/qd-better-comic-sans-font/Qdbettercomicsans-jEEeG.ttf" id="2_h3mnm"]
+[ext_resource type="VideoStream" uid="uid://b1g21o2ly6mdh" path="res://Graphics/Dead_Chad/poor-herbet.ogv" id="3_caow1"]
+[ext_resource type="Texture2D" uid="uid://doxv5a4rcxp0p" path="res://Graphics/BoxThingForOptions.png" id="4_caow1"]
+[ext_resource type="VideoStream" uid="uid://dktx2tw4tgoo" path="res://Graphics/ExpontaneousCombustion/ASPLODE(2).ogv" id="4_ho0nn"]
+
+[node name="AchievmentMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ho0nn")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(40, 40)
+texture = ExtResource("1_h3mnm")
+metadata/_edit_lock_ = true
+
+[node name="Happy" type="VideoStreamPlayer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -358.00003
+offset_top = -613.00006
+offset_right = -518.0
+offset_bottom = -725.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.5, 7.5)
+stream = ExtResource("1_xtt22")
+autoplay = true
+loop = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Happy"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.49074
+offset_bottom = 9.490738
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_h3mnm")
+text = "Touch Grass"
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Happy"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 94.66667
+offset_bottom = 30.80001
+
+[node name="TextureButton" type="TextureButton" parent="Happy"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 4096
+layout_mode = 0
+offset_left = 1.0666709
+offset_top = 34.66667
+offset_right = 16.066671
+offset_bottom = 40.66667
+scale = Vector2(5.25, 5.25)
+disabled = true
+texture_normal = ExtResource("4_caow1")
+
+[node name="Label" type="Label" parent="Happy/TextureButton"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3.0730157
+offset_top = 1.8793662
+offset_right = 87.07301
+offset_bottom = 25.879366
+scale = Vector2(0.085, 0.085)
+theme_override_fonts/font = ExtResource("2_h3mnm")
+theme_override_font_sizes/font_size = 24
+text = "See scene"
+
+[node name="Sad" type="VideoStreamPlayer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -358.0
+offset_top = -329.0
+offset_right = -518.0
+offset_bottom = -441.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.5, 7.5)
+stream = ExtResource("3_caow1")
+speed_scale = 5.2
+autoplay = true
+loop = true
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Sad"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0000267
+offset_top = 10.6336
+offset_right = 2.0000305
+offset_bottom = 10.633598
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_h3mnm")
+text = "Poor Herbet"
+
+[node name="ButtonSad" type="Button" parent="Sad"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 94.66667
+offset_bottom = 30.80001
+
+[node name="TextureButtonSad" type="TextureButton" parent="Sad"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 4096
+layout_mode = 0
+offset_left = 1.0666709
+offset_top = 34.66667
+offset_right = 16.066671
+offset_bottom = 40.66667
+scale = Vector2(5.25, 5.25)
+disabled = true
+texture_normal = ExtResource("4_caow1")
+
+[node name="Label" type="Label" parent="Sad/TextureButtonSad"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 3.0730157
+offset_top = 1.8793662
+offset_right = 87.07301
+offset_bottom = 25.879366
+scale = Vector2(0.085, 0.085)
+theme_override_fonts/font = ExtResource("2_h3mnm")
+theme_override_font_sizes/font_size = 24
+text = "See scene"
+
+[node name="Explosion" type="VideoStreamPlayer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -353.00003
+offset_top = -25.000002
+offset_right = -513.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(7.5, 7.5)
+stream = ExtResource("4_ho0nn")
+autoplay = true
+loop = true
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Explosion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.57143
+offset_top = 9.49074
+offset_right = 4.5714264
+offset_bottom = 9.490738
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_h3mnm")
+text = "Boom"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+metadata/_edit_lock_ = true
+
+[connection signal="button_up" from="Happy/Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="Happy/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_up" from="Happy/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="finished" from="Sad" to="." method="_on_sad_finished"]
+[connection signal="button_up" from="Sad/ButtonSad" to="." method="_on_button_sad_button_up"]
+[connection signal="button_up" from="Sad/TextureButtonSad" to="." method="_on_texture_button_sad_button_up"]

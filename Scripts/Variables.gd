@@ -9,6 +9,8 @@ var poor_herbet = false
 var exploded = false
 var stop_ex = false
 
+var in_game = false
+
 var sociability = 50:
 	set(value):
 		if (value > sociability):
@@ -56,7 +58,10 @@ func changeEvent(event:Event):
 		current_past_events.append(event)
 
 func lastEvent() -> Event:
-	return Variables.current_past_events[Variables.current_past_events.size()-1]
+	if (Variables.current_past_events.size()!=0):
+		return Variables.current_past_events[Variables.current_past_events.size()-1]
+	else:
+		return preload("res://Scripts/All_Events/Event1.gd").new()
 
 func end_game():
 	end_game_bool = true

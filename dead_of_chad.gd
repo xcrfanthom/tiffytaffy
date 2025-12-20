@@ -11,8 +11,12 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed or event.button_index == MOUSE_BUTTON_LEFT:
 			$AudioStreamPlayer2.play()
-			await $AudioStreamPlayer2.finished
-			TransitionLayer.change_scene("res://Scenes/which_room.tscn")
+			await get_tree().create_timer(0.2).timeout
+			if (Variables.in_game):
+				TransitionLayer.change_scene("res://Scenes/which_room.tscn")
+			else:
+				TransitionLayer.change_scene("res://Scenes/achievment_menu.tscn")
+
 
 func show_achievement():
 	if (!Variables.poor_herbet):
