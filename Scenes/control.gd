@@ -29,6 +29,8 @@ func _open_panel():
 	panel.visible = true
 
 func _on_yes_pressed():
+		Music.change_song("res://Music/optional-background-music.wav")
+		Music.start_playing()
 		TransitionLayer.change_scene("res://Scenes/which_room.tscn")
 
 func _on_no_pressed():
@@ -50,4 +52,6 @@ Do you want to continue to the next room?
 
 
 func _on_video_stream_player_finished() -> void:
+	Music.change_song("res://Music/optional-background-music.wav")
+	Music.start_playing()
 	TransitionLayer.change_scene("res://Scenes/which_room.tscn")

@@ -20,9 +20,15 @@ func _ready() -> void:
 			file.close()
 			if marker == "when_things_go_boom":
 				TransitionLayer.change_scene("res://Scenes/kaboom.tscn")
-	choose_event(preload("res://Scripts/All_Events/Event1.gd").new())
+	if (!Variables.in_tutorial):
+		choose_event(preload("res://Scripts/All_Events/Event1.gd").new())
+	else:
+		choose_event(preload("res://Scripts/All_Events/EventTutorial.gd").new())
 	Variables.reset()
-	choose_question()
+	if(!Variables.in_tutorial):
+		choose_question()
+	else:
+		tutorial_explanation()
 	
 	Variables.connect("sociabilityChange", changeOnSocia)
 	Variables.connect("healthChange", changeOnHealth)
@@ -35,6 +41,40 @@ func changeOnSocia(how : bool):
 	else:
 		tween.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(0.875, 0.122, 0.031),timeOfColorChange)
 	tween.tween_property($Sprite2D/SociabilityVar, "self_modulate", Color(1.0, 1.0, 1.0),timeOfColorChange*0.75)
+
+func tutorial_explanation():
+	await get_tree().create_timer(2.0).timeout
+	var explanation_tuto1 = textOfQuestion_scene.instantiate() as TextOfQuestion
+	explanation_tuto1.textOfLabel = "In this game there are 3 variables"
+	explanation_tuto1.position = Vector2(-3800.0, -8750.0)
+	add_child(explanation_tuto1)
+	await get_tree().create_timer(5.0).timeout
+	deleteText(0.75)
+	await get_tree().create_timer(2.0).timeout
+	var explanation_tuto2 = textOfQuestion_scene.instantiate() as TextOfQuestion
+	explanation_tuto2.textOfLabel = "If one reaches 0, Hermet dies, you LOOSE"
+	explanation_tuto2.position = Vector2(-3800.0, -8750.0)
+	add_child(explanation_tuto2)
+	await get_tree().create_timer(5.0).timeout
+	deleteText(0.75)
+	await get_tree().create_timer(2.0).timeout
+	var explanation_tuto3 = textOfQuestion_scene.instantiate() as TextOfQuestion
+	explanation_tuto3.textOfLabel = "If one reaches 100, Hermet happy, you LOOSE"
+	explanation_tuto3.position = Vector2(-3800.0, -8750.0)
+	add_child(explanation_tuto3)
+	await get_tree().create_timer(5.0).timeout
+	deleteText(0.75)
+	await get_tree().create_timer(2.0).timeout
+	var explanation_tuto4 = textOfQuestion_scene.instantiate() as TextOfQuestion
+	explanation_tuto4.textOfLabel = "Hermet's life poses many questions. Choose wisely"
+	explanation_tuto4.position = Vector2(-3800.0, -8750.0)
+	add_child(explanation_tuto4)
+	await get_tree().create_timer(5.0).timeout
+	deleteText(0.75)
+	await get_tree().create_timer(2.0).timeout
+	var question = currentEvent.questions[0]
+	$Question.add_child(question)
+	currentEvent.questions.erase(question)
 
 func changeOnHealth(how : bool):
 	var tween = create_tween()
@@ -115,7 +155,6 @@ func _process(_delta: float) -> void:
 		question_text.connect("deleteText",deleteText)
 		
 		question.queue_free()
-	
 
 func the_sound():
 	var delay = randf_range(1000, 3000)

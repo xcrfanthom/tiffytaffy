@@ -59,7 +59,12 @@ func _on_texture_button_button_up() -> void:
 		addEvent.emit(eventAns[1])
 	else:
 		if (lastQuestionOfEvent):
-			addEvent.emit(Variables.lastEvent())
+			if(!Variables.in_tutorial):
+				addEvent.emit(Variables.lastEvent())
+			else:
+				TransitionLayer.change_scene("res://Scenes/which_room.tscn")
+				Variables.reset()
+				Variables.in_tutorial = false
 	do_animation()
 	if (end_game):
 		Variables.end_game()
@@ -75,7 +80,12 @@ func _on_texture_button_2_button_up() -> void:
 		addEvent.emit(eventAns[1])
 	else:
 		if (lastQuestionOfEvent):
-			addEvent.emit(Variables.lastEvent())
+			if(!Variables.in_tutorial):
+				addEvent.emit(Variables.lastEvent())
+			else:
+				TransitionLayer.change_scene("res://Scenes/which_room.tscn")
+				Variables.reset()
+				Variables.in_tutorial = true
 	do_animation()
 	if (end_game):
 		Variables.end_game()
@@ -95,7 +105,10 @@ func _on_texture_button_3_button_up() -> void:
 		addEvent.emit(eventAns[1])
 	else:
 		if (lastQuestionOfEvent):
-			addEvent.emit(Variables.lastEvent())
+			if(!Variables.in_tutorial):
+				addEvent.emit(Variables.lastEvent())
+			else:
+				get_tree().quit()
 	do_animation()
 	if (end_game):
 		Variables.end_game()

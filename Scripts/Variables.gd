@@ -10,6 +10,7 @@ var exploded = false
 var stop_ex = false
 
 var in_game = false
+var in_tutorial = true
 
 var sociability = 50:
 	set(value):
