@@ -1,2 +1,30 @@
-# tiffytaffy
-12 December - 14 December Inter-Actief x Proto GameJam 2025, an attempt of a game, in godot, 2d.
+# [Witch B!tch]
+
+![Godot Engine](https://img.shields.io/badge/Godot_Engine-4.x-blue?logo=godotengine&logoColor=white)
+
+> Jam game where you are a which, angry at his ex will use her magic to make his life miserable, but always keeping a balance between to bad and too good. Inspired by "Reigns".
+
+## Features
+* **Feature 1:** Decision making in a comedy based game.
+* **Feature 2:** Self-made assets and music.
+* **Feature 3:** Made on the spam of 3 days with a team of 2.
+
+## Project Structure
+
+This project is organized to keep assets and logic strictly separated. Here is a breakdown of the repository structure:
+
+* **`Fonts/`** - Contains all typography assets (`.ttf`, `.otf`, `.woff`) used for UI and in-game text.
+* **`Graphics/`** - Contains all visual assets. This includes character sprites, tilesets, backgrounds, and UI elements (`.png`, `.jpg`, `.svg`).
+* **`Music/`** - Contains all audio assets. This includes background music (BGM) and sound effects (SFX) (`.ogg`, `.wav`, `.mp3`).
+* **`Scenes/`** - Contains all Godot scene files (`.tscn`). This includes levels, menus, characters, and instanced objects.
+* **`Scripts/`** - Contains all code/logic files (`.gd` for GDScript, or `.cs` for C#). Scripts are generally attached to their corresponding scenes.
+
+## How to Run the Project
+
+Executable .exe file (tiffytaffy-main\tiffytaffy-main\"Witch B!tch.exe"
+
+
+## Asset Credits
+
+* **Graphics:** Bartu Akarsu and Daniel Paez Franco
+* **Music:** Bartu Akarsu
