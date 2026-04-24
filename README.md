@@ -2,7 +2,7 @@
 
 ![Godot Engine](https://img.shields.io/badge/Godot_Engine-4.x-blue?logo=godotengine&logoColor=white)
 
-> Jam game where you are a which, angry at her ex, will use her magic to make his life miserable, but always keeping a balance between to bad and too good. Inspired by "Reigns".
+> A game jam game where you play as a witch, furious at her ex, using magic to make his life miserable while carefully keeping a balance between too bad and too good. Inspired by Reigns.
 
 ## Features
 * **Feature 1:** Decision making in a comedy based game.
