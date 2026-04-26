@@ -24,7 +24,7 @@ This project is organized to keep assets and logic strictly separated. Here is a
 
 ## How to Run the Project
 
-Executable .exe file (tiffytaffy-main\tiffytaffy-main\"Witch B!tch.exe"
+Executable finded in this drive: https://drive.google.com/file/d/1Z1O9wVuZbw7kCXuwdSWUxmbtyKwHFFgk/view?usp=sharing
 
 
 ## Asset Credits
