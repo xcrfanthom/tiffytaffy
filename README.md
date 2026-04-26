@@ -4,6 +4,9 @@
 
 > A game jam game where you play as a witch, furious at her ex, using magic to make his life miserable while carefully keeping a balance between too bad and too good. Inspired by Reigns.
 
+<img width="2560" height="1440" alt="TiffyTaffyImage" src="https://github.com/user-attachments/assets/139b12eb-711b-4275-a7e3-df8415b1114a" />
+
+
 ## Features
 * **Feature 1:** Decision making in a comedy based game.
 * **Feature 2:** Self-made assets and music.
